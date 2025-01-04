@@ -5,16 +5,19 @@ services:
       - redis_data:/data
     expose:
       - 6379
-    # The following line might be uncommented to run on MacOS
-    # for testing and development purposes only.
-    # network_mode: host
+    networks:
+      - livekit-network # Adicionado
   livekit:
     image: livekit/livekit-server
-    command: --dev --redis-host localhost:6379
-    network_mode: host
+    command: --dev --redis-host redis:6379 # Alterado para usar o nome do serviço Redis
+    ports:
+      - "7880:7880"
+      - "7881:7881"
+      - "7882:7882/udp"
+    networks:
+      - livekit-network # Adicionado
   sip:
     image: livekit/sip
-    network_mode: host
     environment:
       SIP_CONFIG_BODY: |
         log_level: debug
@@ -26,11 +29,20 @@ services:
           password: ${SIP_PASSWORD}
           server: ${SIP_SERVER}
         redis:
-          address: 'localhost:6379'
+          address: 'redis:6379' # Alterado para usar o nome do serviço Redis
         sip_port: 5060
         rtp_port: 10000-20000
         use_external_ip: true
         logging:
           level: debug
+    ports:
+      - "5060:5060"
+      - "10000-20000:10000-20000/udp"
+    networks:
+      - livekit-network # Adicionado
+
+networks:
+  livekit-network: # Rede Docker adicionada
+    driver: bridge
 volumes:
   redis_data:
