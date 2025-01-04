@@ -1,23 +1,29 @@
+version: '3.8'
+
 services:
   redis:
     image: redis
     volumes:
       - redis_data:/data
-    expose:
-      - 6379
-    networks:
-      - livekit-network # Adicionado
+    ports:
+      - "6379:6379"  # Expõe a porta do Redis para outros serviços
+    restart: unless-stopped
+
   livekit:
     image: livekit/livekit-server
-    command: --dev --redis-host redis:6379 # Alterado para usar o nome do serviço Redis
-    ports:
-      - "7880:7880"
-      - "7881:7881"
-      - "7882:7882/udp"
-    networks:
-      - livekit-network # Adicionado
+    command: --dev --redis-host redis:6379  # Usa o nome do serviço "redis"
+    depends_on:
+      - redis  # Garante que o Redis seja iniciado primeiro
+    environment:
+      LIVEKIT_API_KEY: ${LIVEKIT_API_KEY}
+      LIVEKIT_API_SECRET: ${LIVEKIT_API_SECRET}
+      LIVEKIT_URL: ${LIVEKIT_URL}
+    restart: unless-stopped
+
   sip:
     image: livekit/sip
+    depends_on:
+      - redis  # Garante que o Redis seja iniciado primeiro
     environment:
       SIP_CONFIG_BODY: |
         log_level: debug
@@ -29,20 +35,16 @@ services:
           password: ${SIP_PASSWORD}
           server: ${SIP_SERVER}
         redis:
-          address: 'redis:6379' # Alterado para usar o nome do serviço Redis
+          address: 'redis:6379'  # Usa o nome do serviço "redis"
         sip_port: 5060
         rtp_port: 10000-20000
         use_external_ip: true
         logging:
           level: debug
     ports:
-      - "5060:5060"
-      - "10000-20000:10000-20000/udp"
-    networks:
-      - livekit-network # Adicionado
+      - "5060:5060/udp"  # Expõe a porta SIP
+      - "10000-20000:10000-20000/udp"  # Expõe o range de portas RTP
+    restart: unless-stopped
 
-networks:
-  livekit-network: # Rede Docker adicionada
-    driver: bridge
 volumes:
   redis_data:
