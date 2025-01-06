@@ -3,7 +3,7 @@
     "outbound_number": "+553399395616",
     "outbound_username": "115099001",
     "outbound_password": "dec7958b"
-    "inbound_addresses": "0.0.0.0/0",
+    "inbound_addresses": "",
     "inbound_numbers": "+553399395616",
     "inbound_username": "duzaq",
     "inbound_password": "duzaq",
