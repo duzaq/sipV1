@@ -1,8 +1,13 @@
 
+
+
 {
+  "trunk": {
+    "name": "Twilio inbound trunk",
     "inbound_addresses": ["0.0.0.0/0"],
     "inbound_numbers": ["+553399395616"],
     "inbound_username": "duzaq",
-    "inbound_password": "duzaq",
-    "outbound_number": "+553399395616"
+    "inbound_password": "duzaq"
+
+  }
 }
