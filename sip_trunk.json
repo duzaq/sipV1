@@ -1,5 +1,5 @@
 {
-    "inbound_addresses": ["0.0.0.0/0"],
+  
     "outbound_address": "app.nvoip.com.br",
     "outbound_number": "+553399395616", 
     "inbound_username": "duzaq",
