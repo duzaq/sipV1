@@ -1,13 +1,10 @@
-
-
-
 {
-  "trunk": {
-    "name": "Twilio inbound trunk",
-    "inbound_addresses": ["0.0.0.0/0"],
-    "inbound_numbers": ["+553399395616"],
-    "inbound_username": "duzaq",
-    "inbound_password": "duzaq"
-
-  }
+    "inbound_addresses": ["0.0.0.0/0"],  
+    "outbound_address": "app.nvoip.com.br", 
+    "outbound_number": "+553399395616", 
+    "inbound_numbers_regex": "",  
+    "inbound_username": "duzaq",  
+    "inbound_password": "duzaq", 
+    "outbound_username": "115099001",
+    "outbound_password": "dec7958b"  
 }
