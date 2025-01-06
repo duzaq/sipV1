@@ -1,0 +1,10 @@
+{
+    "inbound_addresses": ["0.0.0.0/0"],  # Aceita chamadas de qualquer endereço IP
+    "outbound_address": "app.nvoip.com.br",  # Endereço IP para chamadas de saída
+    "outbound_number": "+553399395616",  # Número de telefone para chamadas de saída
+    "inbound_numbers_regex": "",  # Aceita todos os números de telefone
+    "inbound_username": "duzaq",  # Usuário para autenticação de chamadas de entrada
+    "inbound_password": "duzaq",  # Senha para autenticação de chamadas de entrada
+    "outbound_username": "115099001",  # Usuário para autenticação de chamadas de saída (opcional)
+    "outbound_password": "dec7958b"  # Senha para autenticação de chamadas de saída (opcional)
+}
