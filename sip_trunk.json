@@ -1,5 +1,5 @@
 {
-    "inbound_addresses": [],
+    "inbound_addresses": ["216.238.99.129"],
     "outbound_address": "app.nvoip.com.br", 
     "outbound_number": "+553399395616",  
     "inbound_numbers_regex": "",  
