@@ -1,6 +1,6 @@
 {
   "name": "dispatch-rule-telnyx",
-  "trunk_ids": ["ST_CniQec4vtaJ6"],
+  "trunk_ids": ["ST_TKxVDphPKTug"],
   "rule": {
     "dispatchRuleIndividual": {
       "roomPrefix": "call"
