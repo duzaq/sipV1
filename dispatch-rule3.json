@@ -1,7 +1,7 @@
 
 {
      "name": "dispatch-rule-telnyx",
-    "trunk_ids": ["ST_TKxVDphPKTug"],
+    "trunk_ids": ["ST_gohxg5iwBXJb"],
     "rule": {
         "dispatchRuleDirect": {
             "roomName": "my-sip-room",
