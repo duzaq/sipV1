@@ -1,7 +1,7 @@
 {
   "trunk": {
     "name": "inbound-telnyx-trunk",
-    "numbers": ["+15105550100","+9999999999"],
+    "numbers": ["+15105550100","+9999999999","+553391390931"],
     "auth_username": "fabio",
     "auth_password": "10Mega20*166",
     "allowed_addresses": ["0.0.0.0/0"]
