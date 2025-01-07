@@ -7,3 +7,14 @@
     }
   }
 }
+
+{
+     "name": "dispatch-rule-telnyx",
+    "trunk_ids": ["ST_TKxVDphPKTug"],
+    "rule": {
+        "dispatchRuleDirect": {
+            "roomName": "my-sip-room",
+            "pin": ""
+        }
+    }
+}
