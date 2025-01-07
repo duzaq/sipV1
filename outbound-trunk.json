@@ -1,0 +1,9 @@
+{
+  "trunk": {
+    "name": "telnyx-trunk",
+    "address": "sip.telnyx.com",
+    "numbers": ["+15105550100"],
+    "auth_username": "fabio",
+    "auth_password": "10Mega20*166"
+  }
+}
