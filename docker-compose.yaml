@@ -37,13 +37,13 @@ services:
         redis:
           address: 'redis:6379'  # Usa o nome do serviço "redis"
         sip_port: 5060
-        rtp_port: 10000-20000
+        rtp_port: 10000-10003
         use_external_ip: true
         logging:
           level: debug
     ports:
       - "5060:5060/udp"  # Expõe a porta SIP
-      - "10000-20000:10000-20000/udp"  # Expõe o range de portas RTP
+      - "10000-10003:10000-10003/udp"  # Expõe o range de portas RTP
     restart: unless-stopped
 
 volumes:
